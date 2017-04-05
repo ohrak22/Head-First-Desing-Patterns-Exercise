@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace WeatherStation
 {
-	interface Observer
+	class WeatherInfo
 	{
-		void update(float temp, float humidity, float pressure);
+		public float temperature { get; set; }
+		public float humidity { get; set; }
+		public float pressure { get; set; }
 	}
 }

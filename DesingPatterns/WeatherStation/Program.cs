@@ -13,12 +13,22 @@ namespace WeatherStation
 			WeatherData weatherData = new WeatherData();
 
 			CurrentConditionsDisplay currentDisplay = new CurrentConditionsDisplay(weatherData);
-			//StatisticsDisplay statisticsDisplay = new StatisticsDisplay(weatherData);
-			//ForecastDisplay forecastDisplay = new ForecastDisplay(weatherData);
 
-			weatherData.setMeasurements(80, 65, 30.4f);
-			weatherData.setMeasurements(82, 70, 29.2f);
-			weatherData.setMeasurements(78, 90, 29.2f);
+			WeatherInfo info = new WeatherInfo();
+			info.temperature = 80;
+			info.humidity = 65;
+			info.pressure = 29.2f;
+			weatherData.setMeasurements(info);
+			info.temperature = 70;
+			info.humidity = 55;
+			info.pressure = 30.2f;
+			weatherData.setMeasurements(info);
+			info.temperature = 83;
+			info.humidity = 62;
+			info.pressure = 21.2f;
+			weatherData.setMeasurements(info);
+
+			weatherData.EndTransmission();
 		}
 	}
 }
