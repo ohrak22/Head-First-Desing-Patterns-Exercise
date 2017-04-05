@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimUDuck", "SimUDuck\SimUDuck.csproj", "{57B16B39-A537-4D83-AC74-6EBD3617BD75}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherStation", "WeatherStation\WeatherStation.csproj", "{D3418BFD-45D2-4108-BF90-D65CD8838594}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StrategyPattern", "StrategyPattern\StrategyPattern.csproj", "{81FCA03D-C305-4CC9-9364-6E6E7A45CA82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{57B16B39-A537-4D83-AC74-6EBD3617BD75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{57B16B39-A537-4D83-AC74-6EBD3617BD75}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{57B16B39-A537-4D83-AC74-6EBD3617BD75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{57B16B39-A537-4D83-AC74-6EBD3617BD75}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D3418BFD-45D2-4108-BF90-D65CD8838594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D3418BFD-45D2-4108-BF90-D65CD8838594}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D3418BFD-45D2-4108-BF90-D65CD8838594}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D3418BFD-45D2-4108-BF90-D65CD8838594}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81FCA03D-C305-4CC9-9364-6E6E7A45CA82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81FCA03D-C305-4CC9-9364-6E6E7A45CA82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81FCA03D-C305-4CC9-9364-6E6E7A45CA82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81FCA03D-C305-4CC9-9364-6E6E7A45CA82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
