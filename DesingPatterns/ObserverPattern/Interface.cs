@@ -12,4 +12,14 @@ namespace ObserverPattern
 		void removeObserver(Observer o);
 		void notifyObservers();
 	}
+
+	interface Observer
+	{
+		void update(float temp, float humidity, float pressure);
+	}
+
+	interface DisplayElement
+	{
+		void display();
+	}
 }
