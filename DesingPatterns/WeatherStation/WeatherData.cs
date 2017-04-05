@@ -7,48 +7,61 @@ using System.Threading.Tasks;
 
 namespace WeatherStation
 {
-	class WeatherData : Subject
+	class WeatherData : IObservable<WeatherInfo>
 	{
-		private ArrayList observers;
-		private float temperature;
-		private float humidity;
-		private float pressure;
+		private List<IObserver<WeatherInfo>> observers;
 
 		public WeatherData()
 		{
-			observers = new ArrayList();
+			observers = new List<IObserver<WeatherInfo>>();
 		}
 
-		public void registerObserver(Observer o)
+		public IDisposable Subscribe(IObserver<WeatherInfo> observer)
 		{
-			observers.Add(o);
+			if(!observers.Contains(observer))
+				observers.Add(observer);
+			return new Unsubscriber(observers, observer);
 		}
 
-		public void removeObserver(Observer o)
+		private class Unsubscriber : IDisposable
 		{
-			observers.Remove(o);
-		}
+			private List<IObserver<WeatherInfo>> _observers;
+			private IObserver<WeatherInfo> _observer;
 
-		public void notifyObservers()
-		{
-			for(int i = 0; i < observers.Count; i++)
+			public Unsubscriber(List<IObserver<WeatherInfo>> observers, IObserver<WeatherInfo> observer)
 			{
-				Observer observer = (Observer)observers[i];
-				observer.update(temperature, humidity, pressure);
+				this._observers = observers;
+				this._observer = observer;
+			}
+
+			public void Dispose()
+			{
+				if(_observer != null && _observers.Contains(_observer))
+					_observers.Remove(_observer);
 			}
 		}
 
-		public void measurementsChanged()
+		public void setMeasurements(WeatherInfo info)
 		{
-			notifyObservers();
+			foreach(var observer in observers)
+			{
+				observer.OnNext(info);
+			}
 		}
 
-		public void setMeasurements(float temperature, float humidity, float pressure)
+		public void EndTransmission()
 		{
-			this.temperature = temperature;
-			this.humidity = humidity;
-			this.pressure = pressure;
-			measurementsChanged();
+			foreach(var observer in observers.ToArray())
+				if(observers.Contains(observer))
+					observer.OnCompleted();
+
+			observers.Clear();
 		}
 	}
+}
+
+public class LocationUnknownException : Exception
+{
+	internal LocationUnknownException()
+	{ }
 }

@@ -6,28 +6,36 @@ using System.Threading.Tasks;
 
 namespace WeatherStation
 {
-	class CurrentConditionsDisplay : Observer, DisplayElement
+	class CurrentConditionsDisplay : IObserver<WeatherInfo>, DisplayElement
 	{
-		private float temperature;
-		private float humidity;
-		private Subject weatherData;
+		private IDisposable unsubscriber;
+		private IObservable<WeatherInfo> observable;
+		private WeatherInfo info = new WeatherInfo();
 
-		public CurrentConditionsDisplay(Subject weatherData)
+		public CurrentConditionsDisplay(IObservable<WeatherInfo> observable)
 		{
-			this.weatherData = weatherData;
-			weatherData.registerObserver(this);
+			this.observable = observable;
+			unsubscriber = observable.Subscribe(this);
 		}
-
-		public void update(float temperature, float humidity, float pressure)
-		{
-			this.temperature = temperature;
-			this.humidity = humidity;
-			display();
-		}
-
+		
 		public void display()
 		{
-			Console.WriteLine("Current conditions: " + temperature + "F degrees and " + humidity + "% humidity");
+			Console.WriteLine("Current conditions: " + info.temperature + "F degrees and " + info.humidity + "% humidity");
+		}
+
+		public void OnCompleted()
+		{
+		}
+		
+		public void OnError(Exception error)
+		{
+		}
+		
+		public void OnNext(WeatherInfo value)
+		{
+			info.temperature = value.temperature;
+			info.humidity = value.humidity;
+			display();
 		}
 	}
 }
