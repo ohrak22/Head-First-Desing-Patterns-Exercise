@@ -17,20 +17,20 @@ namespace StatePattern
 
 		public void insertQuarter()
 		{
-			Console.WriteLine("insertQuarter");
+			Console.WriteLine("동전을 넣으셨습니다.");
 			gumballMachine.setState(gumballMachine.hasQuarterState);
 		}
 		public void ejectQuarter()
 		{
-			Console.WriteLine("ejectQuarter");
+			Console.WriteLine("동전을 넣어주세요.");
 		}
 		public void turnCrank()
 		{
-			Console.WriteLine("turnCrank");
+			Console.WriteLine("동전을 넣어주세요.");
 		}
 		public void dispense()
 		{
-			Console.WriteLine("dispense");
+			Console.WriteLine("동전을 넣어주세요.");
 		}
 	}
 }

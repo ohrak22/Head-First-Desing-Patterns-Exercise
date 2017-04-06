@@ -17,18 +17,19 @@ namespace StatePattern
 
 		public void insertQuarter()
 		{
-			Console.WriteLine("insertQuarter");
+			Console.WriteLine("알맹이가 나가고 있습니다.");
 		}
 		public void ejectQuarter()
 		{
-			Console.WriteLine("ejectQuarter");
+			Console.WriteLine("이미 알맹이를 뽑으셨습니다.");
 		}
 		public void turnCrank()
 		{
-			Console.WriteLine("turnCrank");
+			Console.WriteLine("손잡이는 한번만 돌려주세요.");
 		}
 		public void dispense()
 		{
+			Console.WriteLine("알맹이가 나가고 있습니다.");
 			gumballMachine.releaseBall();
 			if(gumballMachine.getCount() > 0)
 			{
@@ -36,7 +37,6 @@ namespace StatePattern
 			}
 			else
 			{
-				Console.WriteLine("Oops, out of gumballs!");
 				gumballMachine.setState(gumballMachine.soldOutState);
 			}
 		}

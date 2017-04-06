@@ -10,21 +10,26 @@ namespace StatePattern
 	{
 		static void Main(string[] args)
 		{
-			GumballMachine gumballMachine = new GumballMachine(5);
+			GumballMachine gumballMachine = new GumballMachine(3);
 
-			Console.WriteLine(gumballMachine);
+			Console.WriteLine(gumballMachine.toString());
+
+			gumballMachine.insertQuarter();
+			gumballMachine.turnCrank();
+
+			Console.WriteLine(gumballMachine.toString());
+
+			gumballMachine.insertQuarter();
+			gumballMachine.turnCrank();
+			gumballMachine.insertQuarter();
+			gumballMachine.turnCrank();
+
+			Console.WriteLine(gumballMachine.toString());
 
 			gumballMachine.insertQuarter();
 			gumballMachine.turnCrank();
 
-			Console.WriteLine(gumballMachine);
 
-			gumballMachine.insertQuarter();
-			gumballMachine.turnCrank();
-			gumballMachine.insertQuarter();
-			gumballMachine.turnCrank();
-
-			Console.WriteLine(gumballMachine);
 		}
 	}
 }

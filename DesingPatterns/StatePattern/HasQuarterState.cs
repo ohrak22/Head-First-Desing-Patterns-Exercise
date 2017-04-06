@@ -17,21 +17,21 @@ namespace StatePattern
 
 		public void insertQuarter()
 		{
-			Console.WriteLine("insertQuarter");
+			Console.WriteLine("동전은 한 개만 넣어주세요.");
 		}
 		public void ejectQuarter()
 		{
-			Console.WriteLine("ejectQuarter");
+			Console.WriteLine("동전이 반환됩니다.");
 			gumballMachine.setState(gumballMachine.noQuarterState);
 		}
 		public void turnCrank()
 		{
-			Console.WriteLine("turnCrank");
-			gumballMachine.setState(gumballMachine.noQuarterState);
+			Console.WriteLine("손잡이를 돌렸습니다.");
+			gumballMachine.setState(gumballMachine.soldState);
 		}
 		public void dispense()
 		{
-			Console.WriteLine("dispense");
+			Console.WriteLine("알맹이가 나갈 수 없습니다.");
 		}
 	}
 }

@@ -21,6 +21,7 @@ namespace StatePattern
 		public void turnCrank()
 		{
 			state.turnCrank();
+			state.dispense();
 		}
 		public void ejectQuarter()
 		{
@@ -43,7 +44,7 @@ namespace StatePattern
 			noQuarterState = new NoQuarterState(this);
 			hasQuarterState = new HasQuarterState(this);
 			soldState = new SoldState(this);
-			state = soldState;
+			state = noQuarterState;
 		}
 		public void setState(State state)
 		{
@@ -52,11 +53,20 @@ namespace StatePattern
 
 		public void releaseBall()
 		{
+			count--;
 		}
 
 		public int getCount()
 		{
 			return count;
 		}
+
+		public string toString()
+		{
+			string str = "\n주식회사 왕뽑기";
+			str += "\n남은 개수: " + count + "개";
+			return str;
+		}
+
 	}
 }
