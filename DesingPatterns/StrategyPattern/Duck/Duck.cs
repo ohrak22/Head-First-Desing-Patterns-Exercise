@@ -25,7 +25,7 @@ namespace StrategyPattern
 
 		public void swim()
 		{
-			Console.WriteLine("모든 오리는 물에 뜹니다. 가짜 오리도 뜨죠");
+			Console.WriteLine("I'm Swim");
 		}
 	}
 }

@@ -10,7 +10,7 @@ namespace StrategyPattern
 	{
 		public void quack()
 		{
-			Console.WriteLine("삑");
+			Console.WriteLine("Squeak");
 		}
 	}
 }

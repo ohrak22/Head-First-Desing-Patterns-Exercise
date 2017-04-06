@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern
+namespace AdaptorPattern
 {
-	class FlyNoWay : FlyBehavior
+	interface Turkey
 	{
-		public void fly()
-		{
-			Console.WriteLine("I can't fly");
-		}
+		void gobble();
+		void fly();
 	}
 }

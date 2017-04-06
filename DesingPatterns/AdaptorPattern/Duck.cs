@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StrategyPattern
+namespace AdaptorPattern
 {
-	class FlyNoWay : FlyBehavior
+	interface Duck
 	{
-		public void fly()
-		{
-			Console.WriteLine("I can't fly");
-		}
+		void quack();
+		void fly();
 	}
 }

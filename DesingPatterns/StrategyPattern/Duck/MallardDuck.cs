@@ -16,7 +16,7 @@ namespace StrategyPattern
 
 		public override void display()
 		{
-			Console.WriteLine("저는 물오리입니다.");
+			Console.WriteLine("I'm Mallard Duck");
 		}
 	}
 }

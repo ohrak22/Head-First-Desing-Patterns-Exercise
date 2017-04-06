@@ -10,7 +10,7 @@ namespace StrategyPattern
 	{
 		public void quack()
 		{
-			Console.WriteLine("(조용~)");
+			Console.WriteLine("(Mute~)");
 		}
 	}
 }
