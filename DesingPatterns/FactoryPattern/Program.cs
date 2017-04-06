@@ -10,15 +10,10 @@ namespace FactoryPattern
 	{
 		static void Main(string[] args)
 		{
-			SimplePizzaFactory factory = new SimplePizzaFactory();
 			PizzaStore nyStore = new NYPizzaStore();
 			PizzaStore chicagoStore = new ChicagoPizzaStore();
 
-			Pizza pizza = factory.createPizza("pepperoni");
-			Console.WriteLine("John ordered a " + pizza.name);
-			Console.WriteLine("");
-
-			pizza = nyStore.orderPizza("cheese");
+			Pizza pizza = nyStore.orderPizza("cheese");
 			Console.WriteLine("Ethan ordered a " + pizza.name);
 			Console.WriteLine("");
 

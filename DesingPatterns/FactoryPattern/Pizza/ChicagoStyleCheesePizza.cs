@@ -8,13 +8,19 @@ namespace FactoryPattern
 {
 	class ChicagoStyleCheesePizza : Pizza
 	{
-		public ChicagoStyleCheesePizza()
-		{
-			name = "Chicago Style Cheese Pizza";
-			dough = "Extra Thin Crust Dough";
-			sauce = "Plum Tomato Sauce";
+		PizzaIngredientFactory ingredientFactory;
 
-			Toppings.Add("Shreddad Mozzarella Cheese");
+		public ChicagoStyleCheesePizza(PizzaIngredientFactory ingredientFactory)
+		{
+			this.ingredientFactory = ingredientFactory;
+		}
+
+		public override void prepare()
+		{
+			Console.WriteLine("Preparing " + name);
+			dough = ingredientFactory.createDough();
+			sauce = ingredientFactory.createSauce();
+			cheese = ingredientFactory.createCheese();
 		}
 
 		public override void cut()
