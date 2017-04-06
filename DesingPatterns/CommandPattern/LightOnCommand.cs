@@ -19,5 +19,10 @@ namespace CommandPattern
 		{
 			light.on();
 		}
+
+		public void undo()
+		{
+			light.off();
+		}
 	}
 }

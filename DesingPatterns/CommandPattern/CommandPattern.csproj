@@ -50,6 +50,7 @@
     <Compile Include="NoCommand.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RemoteControlWithUndo.cs" />
     <Compile Include="RemoteControl.cs" />
     <Compile Include="SimpleRemoteControl.cs" />
     <Compile Include="Stereo.cs" />

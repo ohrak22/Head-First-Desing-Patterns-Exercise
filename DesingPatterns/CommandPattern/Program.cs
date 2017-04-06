@@ -47,6 +47,29 @@ namespace CommandPattern
 			remotControl.offButtonWasPushed(1);
 			remotControl.onButtonWasPushed(2);
 			remotControl.offButtonWasPushed(2);
+
+
+			Console.WriteLine("");
+
+			RemoteControlWithUndo undoRemotControl = new RemoteControlWithUndo();
+
+			Light livingRoomUndoLight = new Light("Living Room");
+
+			LightOnCommand livingRoomUndoLightOn = new LightOnCommand(livingRoomUndoLight);
+			LightOffCommand livingRoomUndoLightOff = new LightOffCommand(livingRoomUndoLight);
+
+			undoRemotControl.setCommand(0, livingRoomUndoLightOn, livingRoomUndoLightOff);
+
+			undoRemotControl.onButtonWasPushed(0);
+			undoRemotControl.offButtonWasPushed(0);
+			Console.WriteLine(undoRemotControl.toString());
+
+			undoRemotControl.undoButtonWasPushed();
+			undoRemotControl.onButtonWasPushed(0);
+			undoRemotControl.offButtonWasPushed(0);
+			Console.WriteLine(undoRemotControl.toString());
+
+			undoRemotControl.undoButtonWasPushed();
 		}
 	}
 }

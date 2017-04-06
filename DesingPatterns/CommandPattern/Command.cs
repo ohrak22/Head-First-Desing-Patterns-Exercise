@@ -9,5 +9,6 @@ namespace CommandPattern
 	interface Command
 	{
 		void execute();
+		void undo();
 	}
 }

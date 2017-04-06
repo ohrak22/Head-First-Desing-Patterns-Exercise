@@ -19,5 +19,9 @@ namespace CommandPattern
 		{
 			stereo.on();
 		}
+
+		public void undo()
+		{
+		}
 	}
 }

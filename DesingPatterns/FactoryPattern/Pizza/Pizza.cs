@@ -32,7 +32,7 @@ namespace FactoryPattern
 			Console.WriteLine("Place pizza in official PizzaStore box");
 		}
 
-		public string ToString()
+		public string toString()
 		{
 			return "없음";
 		}
