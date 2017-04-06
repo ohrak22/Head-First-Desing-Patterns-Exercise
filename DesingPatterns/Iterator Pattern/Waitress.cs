@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,20 +20,23 @@ namespace IteratorPattern
 
 		public void printMenu()
 		{
-			Iterator pancakeIterator = pancakeHouseMenu.createiterator();
-			Iterator dinerIterator = dinerMenu.createiterator();
+			IEnumerator pancakeIterator = pancakeHouseMenu.createiterator();
+			IEnumerator dinerIterator = dinerMenu.createiterator();
 			Console.WriteLine("Menu\n----Morning menu----");
 			printmenu(pancakeIterator);
 			Console.WriteLine("\n----Diner menu----");
 			printmenu(dinerIterator);
 		}
 
-		private void printmenu(Iterator iterator)
+		private void printmenu(IEnumerator iterator)
 		{
-			while(iterator.hasNext())
+			while(iterator.MoveNext())
 			{
-				MenuItem menuItem = (MenuItem)iterator.next();
-				Console.WriteLine(menuItem.name + ", " + menuItem.price + " -- " + menuItem.description);
+				if(iterator.Current != null)
+				{
+					MenuItem menuItem = (MenuItem)iterator.Current;
+					Console.WriteLine(menuItem.name + ", " + menuItem.price + " -- " + menuItem.description);
+				}
 			}
 		}
 	}

@@ -28,9 +28,9 @@ namespace IteratorPattern
 			menuItems.Add(menuItem);
 		}
 
-		public Iterator createiterator()
+		public IEnumerator createiterator()
 		{
-			return new PancakeHouseIterator(menuItems);
+			return menuItems.GetEnumerator();
 		}
 	}
 }
